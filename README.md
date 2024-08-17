@@ -16,7 +16,7 @@ To get started, clone this repository and install the required Python packages.
    git clone <repository-url>
    cd <repository-directory>
 ## To be installed packages 
-```pip install streamlit pandas numpy scikit-learn xgboost streamlit-lottie
+```pip install streamlit pandas numpy scikit-learn xgboost streamlit-lottie```
 ## To run our application
-```streamlit run main.py
+```streamlit run main.py```
 
