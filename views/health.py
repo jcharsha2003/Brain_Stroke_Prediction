@@ -23,7 +23,7 @@ def health():
     st.subheader("Please fill out your health metrics.")
 
     # Create columns for the layout with adjusted proportions
-    col1, col2 = st.columns([2, 3])
+    col1, col2 = st.columns([1, 1])
 
     with col1:
         # Diabetes
