@@ -60,7 +60,7 @@ def predict():
     st.subheader("Review your information and make a prediction.")
 
     # Add a theme selector
-    theme = st.selectbox("Please Select ,Selected Theme in Streamlit settings", options=["Dark", "Light"])
+    theme = st.selectbox("Please Select ,Selected Theme in Streamlit settings", options=["Light", "Dark"])
 
     # Get user data from session state
     user_data = st.session_state.get("user_data", {})
@@ -99,9 +99,24 @@ def predict():
     }
 
     df_user_input = pd.DataFrame(user_input.items(), columns=['Feature', 'Value'])
-
+    # CSS styling to center the animation
+    st.markdown(
+        """
+        <style>
+        .lottie-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding-top: 50px;  /* Top margin */
+            padding-bottom: 50px;  /* Bottom margin */
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     # Create columns for layout
-    col1, col2 = st.columns([1, 1])
+    col1, col2 = st.columns([3, 3])
 
     with col1:
         # Display the user data table
@@ -110,16 +125,20 @@ def predict():
 
     with col2:
         # Display the Lottie animation based on the selected theme
-        st_lottie(
-            lottie_predict_dark if theme == "Dark" else lottie_predict_light,
-            speed=1,
-            reverse=False,
-            loop=True,
-            quality="high",
-            height=220,  # Adjust height
-            width=270,   # Adjust width
-            key="predict_animation"
-        )
+        with st.container():
+            st.markdown('<div class="lottie-container">', unsafe_allow_html=True)
+
+            st_lottie(
+                lottie_predict_dark if theme == "Dark" else lottie_predict_light,
+                speed=1,
+                reverse=False,
+                loop=True,
+                quality="high",
+                height=220,  # Adjust height
+                width=270,   # Adjust width
+                key="predict_animation"
+            )
+            st.markdown('</div>', unsafe_allow_html=True)
 
     # Predict button
     if st.button("Predict"):
