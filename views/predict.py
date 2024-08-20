@@ -215,9 +215,33 @@ def predict():
             stroke_prediction = xgboost_model.predict(input_xgboost_scaled)[0]
             prediction_proba = xgboost_model.predict_proba(input_xgboost_scaled)
             if stroke_prediction == 1:
-                st.warning(f"High Risk of Stroke: {round(prediction_proba[0][1] * 100, 2)}%")
+                st.warning(f"⚠️ High Risk of Stroke: {round(prediction_proba[0][1] * 100, 2)}%")
+                st.write("### **Important:**")
+                st.write("""
+                It is strongly advised that you consult a healthcare professional immediately. 
+                A high risk of stroke indicates the need for urgent medical attention to prevent serious health complications. 
+                Your doctor may recommend lifestyle changes, medication, or further diagnostic tests to manage this risk.
+                """)
             else:
-                st.success(f"Low Risk of Stroke: {round(prediction_proba[0][0] * 100, 2)}%")
+                st.success(f"🎉 Low Risk of Stroke: {round(prediction_proba[0][0] * 100, 2)}%")
+                st.balloons()
+                st.write("### **Great News!**")
+                st.write("""
+                While your risk of stroke is low, it's important to maintain a healthy lifestyle to keep it that way. 
+                Regular exercise, a balanced diet, and routine medical check-ups can help you stay healthy and prevent future risks. 
+                Keep up the good work, and remember that prevention is key to long-term well-being.
+                """)
+
+            st.write("---")
+            st.write("### General Tips for Stroke Prevention:")
+            st.write("""
+            - **Stay Active:** Regular physical activity helps maintain healthy blood pressure and reduces the risk of stroke.
+            - **Eat a Balanced Diet:** Incorporate fruits, vegetables, whole grains, and lean proteins into your diet.
+            - **Avoid Smoking:** Smoking increases the risk of stroke, so quitting is one of the best steps you can take for your health.
+            - **Manage Stress:** Chronic stress can contribute to stroke risk, so practice relaxation techniques like meditation or deep breathing.
+            - **Monitor Blood Pressure:** High blood pressure is a leading cause of stroke, so keep it in check with regular monitoring.
+            - **Stay Hydrated:** Drinking enough water throughout the day helps maintain proper blood circulation.
+            """)
         else:
             # Notify user which fields are missing
             st.error(f"Please fill out the following fields on the previous pages: {', '.join(missing_fields)}")

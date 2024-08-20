@@ -75,7 +75,7 @@ with st.sidebar:
 
 # --- PAGE CONTENT FUNCTIONS ---
 def home():
-    st.title("Welcome to the Stroke Prediction App")
+    st.title("Welcome to the Brain Stroke Prediction App")
 
     # Use columns to place text on the left and the animation on the right
     col1, col2 = st.columns([1.2, 1])
