@@ -71,7 +71,7 @@ label_dicts = {
    
 }
 def predict():
-    st.title("Stroke Prediction")
+    st.title("Brain Stroke Prediction")
     st.subheader("Review your information and make a prediction.")
 
     # Add a theme selector
