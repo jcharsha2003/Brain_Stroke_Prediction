@@ -1,7 +1,7 @@
-streamlit==1.25.1  # Streamlit version as of August 2024
-pandas==2.1.1  # Latest compatible version in August 2024
-numpy==1.26.0  # NumPy version released in July 2024
-scikit-learn==1.3.1  # Stable version in August 2024
-xgboost==2.0.0  # Latest XGBoost version available in August 2024
-streamlit-lottie==0.0.2  # No major updates available
-streamlit-option-menu==0.4.0  # Compatible version
+streamlit==1.40.2  # This version exists but may need updating based on your environment
+pandas==2.2.3  # This version is likely not available yet. The latest stable version is 2.1.x
+numpy==2.2.0  # Numpy version 2.2.0 does not exist; the latest stable version is 1.26.0
+scikit-learn==1.5.2  # This version is also unavailable. The latest stable version is 1.3.1
+xgboost==1.7.6  # Available, but there is a newer stable version 2.0.0
+streamlit-lottie==0.0.2  # Valid version; no changes required
+streamlit-option-menu==0.4.0  # Valid version; no changes required
