@@ -1,7 +1,7 @@
 # 🧠 Brain Stroke Prediction Web Application
 
-**Live App**: [BSP.com](#)  
-**GitHub Repo**: [GitHub Link](#)
+**Live App**: [BSP.com](https://brainstrokep.streamlit.app/)  
+**GitHub Repo**: [GitHub Link](https://github.com/jcharsha2003/Brain_Stroke_Prediction)
 
 ---
 
